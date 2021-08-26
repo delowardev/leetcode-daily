@@ -1,4 +1,4 @@
-// https://leetcode.com/problems/merge-k-sorted-lists/
+// https://leetcode.com/problems/merge-two-sorted-lists/
 
 /**
  * Definition for singly-linked list.
@@ -8,23 +8,11 @@
  * }
  */
 /**
- * @param {ListNode[]} lists
+ * @param {ListNode} l1
+ * @param {ListNode} l2
  * @return {ListNode}
  */
-
- var mergeKLists = function(lists) {
-  if (lists.length === 0) return null
-
-  while(lists.length > 1) {
-      const l1 = lists.shift()
-      const l2 = lists.shift()
-      const merged = merge(l1, l2)
-      lists.push(merged)
-  }
-  return lists[0];
-};
-
-var merge = function(l1, l2) {
+ var mergeTwoLists = function(l1, l2) {
   let d = new ListNode(0)
   let c = d
 
@@ -42,5 +30,4 @@ var merge = function(l1, l2) {
   c.next = l1 || l2
 
   return d.next
-
-}
+};
