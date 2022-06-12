@@ -16,3 +16,24 @@ var lengthOfLongestSubstring = function(s) {
 
   return max;
 };
+
+var lengthOfLongestSubstring2 = function(s) {
+
+  let max = 0;
+  let substr = '';
+
+
+  for ( let c of s ) {
+    if ( substr.includes(c) ) {
+      substr.substring(1)
+    } else {
+      substr += c;
+      max = Math.max(substr.length, max)
+    }
+  }
+
+  return max;
+
+};
+
+console.log( lengthOfLongestSubstring2( 'pwwkew' ) );
